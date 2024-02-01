@@ -1,0 +1,9 @@
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @for(product of products; track product.id){
+      <div class="col">
+       <!-- CHILD COMPONENT -->
+        <!-- <app-game-card [gameItem]="game" (sendToParent)="receiveFromChild($event)"></app-game-card> -->
+          <app-product-card [singleProduct]="product"></app-product-card>
+      </div>
+    }
+  </div>

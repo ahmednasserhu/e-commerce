@@ -1,0 +1,35 @@
+<nav class="navbar bg-dark border-body" data-bs-theme="dark">
+  <div class="container-md d-flex justify-content-between align-items-center">
+    <a
+      class="navbar-brand"
+      routerLink="/"
+      routerLinkActive="activeLink"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >E-Commerce Website</a
+    >
+    <div class="d-flex ms-3">
+      <!-- Use ms-3 for margin-start -->
+      <a class="navbar-brand" routerLink="login" routerLinkActive="activeLink"
+        >Login</a
+      >
+      <a
+        class="navbar-brand"
+        routerLink="register"
+        routerLinkActive="activeLink"
+        >Register</a
+      >
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #212529;"
+        routerLink="cart"
+        role="button"
+      >
+        <fa-icon routerLinkActive="activeLink" [icon]="shoppingCart"></fa-icon>
+      </a>
+    </div>
+  </div>
+</nav>
+<!-- when a child route is active then all the parents routes are also marked as active
+so i should add this option [routerLinkActiveOptions]="{exact:true}"
+To add the classes only when the URL matches the link exactly -->

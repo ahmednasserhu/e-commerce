@@ -1,0 +1,30 @@
+<div (click)="navigateToProductDetail(singleProduct.id)" id="card-component" class="card m-5" style="width: 18rem; background-color: #212921; color:white;">
+  <img
+    [src]="singleProduct.thumbnail"
+    class="card-img-top fixed-image-size mt-1"
+    alt="..."
+  />
+  <div class="card-body fixed-card-body-size">
+    <div class="d-flex">
+      <h5 class="card-title fw-bolder text-primary">
+        {{singleProduct.title}}
+      </h5>
+      <small class="ms-auto">{{singleProduct.price}}$</small>
+    </div>
+    <p class="card-text"><span class="fw-bold">{{singleProduct.description | slice:0:100 }}</span></p>
+    <div class="star-rating">
+      
+      <!-- <ng-container *ngFor="let star of starsArray; let i = index">
+        <fa-icon class="text-warning" [icon]="getStarIcon(i)"></fa-icon>
+      </ng-container> -->
+    </div>
+    <div class="mt-auto">
+      <button class="btn btn-group btn-primary">Add to cart</button>
+      @if(singleProduct.stock === 0){
+      <span class="outOfStockSpan fw-bolder">Out Of Stock</span>
+    }@else{
+      <span class="stockSpan fw-bolder ">In Stock</span>
+    }
+    </div>
+  </div>
+</div>
